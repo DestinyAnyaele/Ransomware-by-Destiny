@@ -7,7 +7,7 @@ current_path = os.getcwd()
 working_directory = os.path.dirname(current_path)
 
 # generating a key
-key = fernet.Fernet.generate_key
+key = fernet.Fernet.generate_key()
 
 # creating a log file 
 with open(current_path + 'logs.txt','w') as log_file :
