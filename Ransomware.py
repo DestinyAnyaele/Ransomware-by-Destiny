@@ -32,7 +32,7 @@ def file_encrypter(path) :
               logging.getLogger().error(f'This path ({path}) was unsuccessfully encrypted due to {error_type}')
               failed += 1
     else :
-            logging.basicConfig(filename = current_path + '/logs.txt',level = logging.DEBUG
+            logging.basicConfig(filename = current_path + '/logs.txt',level = logging.DEBUG)
             logging.log(level = logging.DEBUG,msg = f'This {path} was successfully encrypted')
             success += 1
 
