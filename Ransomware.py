@@ -11,7 +11,7 @@ key = fernet.Fernet.generate_key()
 
 # creating a log file 
 with open(current_path + '/logs.txt','w') as log_file :
-   log_file.write(' \t \t This is a log file')
+   log_file.write(' \t \t This is a log file \n')
      
 
 # logging configuration
