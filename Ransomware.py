@@ -14,8 +14,7 @@ with open(current_path + '/logs.txt','w') as log_file :
    log_file.write(' \t \t This is a log file \n')
      
 
-# logging configuration
-logging.basicConfig(filename = current_path + '/logs.txt',level = logging.DEBUG)
+
           
         
 success,failed = 0,0      
@@ -29,9 +28,11 @@ def file_encrypter(path) :
         with open(path,'wb') as file :
             file.write(encrypted_file)
     except Exception as error_type :
+              logging.basicConfig(filename = current_path + '/logs.txt',level = logging.ERROR)
               logging.getLogger().error(f'This path ({path}) was unsuccessfully encrypted due to {error_type}')
               failed += 1
     else :
+            logging.basicConfig(filename = current_path + '/logs.txt',level = logging.DEBUG
             logging.log(level = logging.DEBUG,msg = f'This {path} was successfully encrypted')
             success += 1
 
