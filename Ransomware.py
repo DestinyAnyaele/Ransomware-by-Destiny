@@ -65,3 +65,15 @@ print(colorama.Style.RESET_ALL + colorama.Style.BRIGHT)
 # intializing mode for payment
 from bank_details import bank_info,money_logger
 bank_info()
+# Decrypting files
+def decryption() :
+    for files in Files_encrypted :
+        with open(files,'rb') as file :
+            Bin = file.read()
+        decrypted_file = fernet.Fernet(key).decrypt(Bin)
+        with open(files,'wb') as file :
+            file.write(decrypted_file)
+decryption()
+print('DONE ')
+
+
